@@ -1,0 +1,13 @@
+form{
+    display: flex;
+    flex-direction: column;
+    border: 3px solid black;
+    height: 5rem;
+    width: 20rem;
+    justify-content: center;
+    align-items: center;
+}
+
+input{
+    width: 40px;
+}

@@ -1,0 +1,4 @@
+<form [formGroup]="presupuestoTotalService.rForm" (change)="presupuestoTotalService.masPresupuesto()">
+    <label>Numero de paginas <button (click)="masmenosButtons('masPag')">+</button><input formControlName="nPag" type="number" min="1" value="1"/><button (click)="masmenosButtons('menosPag')">-</button></label>
+    <label>Numero de idiomas <button (click)="masmenosButtons('masI')">+</button><input formControlName="nIdio" type="number" min="1"/><button (click)="masmenosButtons('menosI')">-</button></label>
+</form>

@@ -1,0 +1,13 @@
+<h1>Welcome</h1>
+
+<p>Veniam est duis ut ut commodo nisi adipisicing velit sint consequat. Anim adipisicing et laboris non est quis ipsum duis. Aliquip excepteur eu tempor eiusmod minim et do irure. Laboris culpa labore deserunt aliquip reprehenderit excepteur tempor id proident. Occaecat amet nulla nulla voluptate est amet consectetur cupidatat. Quis commodo tempor qui exercitation sunt velit. Non elit voluptate excepteur nulla reprehenderit ea velit fugiat excepteur ea.</p>
+
+<ng-template #contenido let-modal>
+    <div class="modal-body">
+        <span>dasdasdasd</span><button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</ng-template>
+
+<button type="button" class="btn btn-outline-danger" (click)="openSM(contenido)">modal</button>

@@ -1,0 +1,13 @@
+
+<p>¿Que quieres hacer?</p>
+
+<form>
+
+    <label for="ch1"><input type="checkbox" id="ch1" name="500" (change)="presupuestoTotalService.checkChange($event)">Una pagina web (500€)</label>
+  <div *ngIf="presupuestoTotalService.webChecked"><app-panel></app-panel></div>
+  <label for="ch2"><input type="checkbox" id="ch2" name="300" (change)="presupuestoTotalService.checkChange($event)">Una cunsoltia SEO (300€)</label>
+  <label for="ch3"><input type="checkbox" id="ch3" name="200" (change)="presupuestoTotalService.checkChange($event)">Una campaña de Google Ads (200€)</label>
+
+</form>
+
+<p>Precio: <span id="precio">{{presupuestoTotalService.totalSum}}</span>€</p>
