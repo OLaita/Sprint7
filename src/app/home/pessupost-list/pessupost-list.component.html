@@ -1,0 +1,35 @@
+<div>
+   
+    <button class="btn btn-outline-dark" type="button" (click)=presupuestoTotalService.presuReset()>Reset</button>
+    
+    
+
+    <form [formGroup]="presupuestoTotalService.bForm" class="needs-validation d-flex" novalidate>
+
+        <input formControlName="bus" class="form-control" type="text" placeholder="Buscar">
+        <button type="button" class="btn btn-outline-info" (click)=presupuestoTotalService.buscarPresupuesto()>Buscar presupuesto</button>
+    
+    </form>
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Cliente</th>
+            <th>Presupuesto<button class="btn btn-outline-dark" type="button" (click)=presupuestoTotalService.orderByPresupuesto()>^</button></th>
+            <th>Precio total</th>
+            <th>Servicios</th>
+            <th>Fecha<button class="btn btn-outline-dark" type="button" (click)=presupuestoTotalService.orderByFecha()>^</button></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let list of presupuestoTotalService.presuList">
+            <td>{{list.cliente}}</td>
+            <td>{{list.presName}}</td>
+            <td>{{list.precioTotal}}€</td>
+            <td>{{list.services}}</td>
+            <td>{{list.date}}</td>
+        </tr>
+    </tbody>
+    </table>
+
+</div>

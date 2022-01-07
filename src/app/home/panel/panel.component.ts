@@ -1,6 +1,7 @@
 import {Component,OnInit} from '@angular/core';
 import {PesupuestoTotalService} from '../pesupuesto-total.service';
-// import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-panel',
@@ -11,13 +12,18 @@ import {PesupuestoTotalService} from '../pesupuesto-total.service';
 
 export class PanelComponent implements OnInit {
 
+  faInfoCircle = faInfoCircle;
+
   numP: number;
   numI: number;
 
-  constructor(public presupuestoTotalService: PesupuestoTotalService) {
+  tModal: string;
+
+  constructor(public modal:NgbModal, public presupuestoTotalService: PesupuestoTotalService) {
 
     this.numP = 1;
     this.numI = 1;
+    this.tModal = "contenido";
 
   }
 
@@ -56,8 +62,24 @@ export class PanelComponent implements OnInit {
 
     }
 
+    this.presupuestoTotalService.pag = this.numP;
+    this.presupuestoTotalService.idi = this.numI;
+
     this.presupuestoTotalService.masPresupuesto();
 
+  }
+
+
+  mOpen(contenido: any, tipo: string){
+
+    if(tipo == 'pag'){
+      this.tModal = "En este componente debe indicar el numero de paginas que tendra su sitio web";
+    }else{
+      this.tModal = "En este componente debe indicar el numero de idiomas que tendra su sitio web";
+    }
+
+
+    this.modal.open(contenido);
   }
 
 }

@@ -1,4 +1,13 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 <form [formGroup]="presupuestoTotalService.rForm" (change)="presupuestoTotalService.masPresupuesto()">
-    <label>Numero de paginas <button (click)="masmenosButtons('masPag')">+</button><input formControlName="nPag" type="number" min="1" value="1"/><button (click)="masmenosButtons('menosPag')">-</button></label>
-    <label>Numero de idiomas <button (click)="masmenosButtons('masI')">+</button><input formControlName="nIdio" type="number" min="1"/><button (click)="masmenosButtons('menosI')">-</button></label>
+    <label>Numero de paginas <button (click)="masmenosButtons('masPag')">+</button><input formControlName="nPag" type="number" min="1" value="1"/><button (click)="masmenosButtons('menosPag')">-</button><button type="button" class="btn btn-outline-link" (click)="mOpen(contenido, 'pag')"><fa-icon [icon]="faInfoCircle"></fa-icon></button></label>
+    <label>Numero de idiomas <button (click)="masmenosButtons('masI')">+</button><input formControlName="nIdio" type="number" min="1"/><button (click)="masmenosButtons('menosI')">-</button><button type="button" class="btn btn-outline-link" (click)="mOpen(contenido, 'idi')"><fa-icon [icon]="faInfoCircle"></fa-icon></button></label>
 </form>
+
+
+<ng-template #contenido let-modal>
+    <div class="modal-body text-center">
+        <span>{{tModal}}</span>
+    </div>
+</ng-template>

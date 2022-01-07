@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -10,14 +9,9 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 export class WelcomeComponent implements OnInit {
 
-  constructor(private modal:NgbModal) { }
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-  openSM(contenido: any){
-    // console.log(this.modal);
-    this.modal.open(contenido,{size:'xl'});
   }
 
 }

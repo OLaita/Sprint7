@@ -1,13 +1,28 @@
 
-<p>¿Que quieres hacer?</p>
+<div class="container-fluid d-flex justify-content-around">
+  <div>
+  <p>¿Que quieres hacer?</p>
 
-<form>
+  <form [formGroup]="presupuestoTotalService.iForm">
+  
+    <label for="ch1"><input type="checkbox" id="ch1" formControlName="500" name="500" (change)="presupuestoTotalService.checkChange($event)">Una pagina web (500€)</label>
+    <div *ngIf="presupuestoTotalService.webChecked"><app-panel></app-panel></div>
+    <label for="ch2"><input type="checkbox" id="ch2" formControlName="300" name="300" (change)="presupuestoTotalService.checkChange($event)">Una cunsoltia SEO (300€)</label>
+    <label for="ch3"><input type="checkbox" id="ch3" formControlName="200" name="200" (change)="presupuestoTotalService.checkChange($event)">Una campaña de Google Ads (200€)</label>
+  
+  </form>
+  
+  <p>Precio: <span id="precio">{{presupuestoTotalService.totalSum}}</span>€</p>
 
-    <label for="ch1"><input type="checkbox" id="ch1" name="500" (change)="presupuestoTotalService.checkChange($event)">Una pagina web (500€)</label>
-  <div *ngIf="presupuestoTotalService.webChecked"><app-panel></app-panel></div>
-  <label for="ch2"><input type="checkbox" id="ch2" name="300" (change)="presupuestoTotalService.checkChange($event)">Una cunsoltia SEO (300€)</label>
-  <label for="ch3"><input type="checkbox" id="ch3" name="200" (change)="presupuestoTotalService.checkChange($event)">Una campaña de Google Ads (200€)</label>
+  <form [formGroup]="presupuestoTotalService.dForm" class="needs-validation" novalidate>
+
+    <label>Nombre presupuesto<br><input formControlName="preName" class="form-control" type="text" required></label>
+    <label>Nombre usuario<br><input formControlName="username" class="form-control" type="text" required></label><br><br>
+    <button type="button" class="btn btn-outline-info" (click)=presupuestoTotalService.prePresupuesto()>Crear presupuesto</button>
 
 </form>
-
-<p>Precio: <span id="precio">{{presupuestoTotalService.totalSum}}</span>€</p>
+</div>
+<div>
+  <app-pessupost-list></app-pessupost-list>
+</div>
+</div>
