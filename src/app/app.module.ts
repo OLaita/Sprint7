@@ -11,7 +11,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PessupostListComponent } from './home/pessupost-list/pessupost-list.component';
 // import { DataTablesModule } from 'angular-datatables';
-import { DataTablesModule } from 'angular-datatables';
+// import { DataTablesModule } from 'angular-datatables';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -28,7 +29,7 @@ import { DataTablesModule } from 'angular-datatables';
     AppRoutingModule,
     ReactiveFormsModule,
     FontAwesomeModule,
-    DataTablesModule
+    HttpClientModule
   ],
   providers: [PesupuestoTotalService],
   bootstrap: [AppComponent]
