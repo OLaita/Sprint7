@@ -196,7 +196,7 @@ export class PesupuestoTotalService {
     let form = this.bForm.value;
     let buscar: number = form.bus;
 
-    let t = this.presuList.filter(function(val){
+    let t = this.presuList2.filter(function(val){
 
       if(val.presName == buscar){
         return val;
